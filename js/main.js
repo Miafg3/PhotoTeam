@@ -1,17 +1,71 @@
 const mainImage = document.getElementById("main-image");
-const thumbnails = document.querySelectorAll(".thumb");
+const thumbs = document.querySelectorAll(".thumb");
 
-thumbnails.forEach((thumb) => {
+thumbs.forEach((thumb) => {
     thumb.addEventListener("click", () => {
-        // cambiar imagen principal
         mainImage.src = thumb.src;
 
-        // quitar active a todas
-        thumbnails.forEach((item) => {
-        item.classList.remove("active");
+        thumbs.forEach((item) => {
+            item.classList.remove("active-thumb");
         });
 
-        // agregar active a la actual
-        thumb.classList.add("active");
+        thumb.classList.add("active-thumb");
     });
+});
+
+const slides = document.querySelectorAll(".slide");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach((slide) => {
+        slide.classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
+}
+
+nextBtn.addEventListener("click", () => {
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+});
+
+prevBtn.addEventListener("click", () => {
+    currentSlide--;
+
+    if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+    }
+
+    showSlide(currentSlide);
+});
+
+const modal = document.querySelector(".modal");
+const modalImage = document.querySelector(".modal-image");
+const closeModal = document.querySelector(".close-modal");
+const gridImages = document.querySelectorAll(".grid-img");
+
+gridImages.forEach((img) => {
+    img.addEventListener("click", () => {
+        modal.classList.add("active");
+
+        modalImage.src = img.src;
+    });
+});
+
+closeModal.addEventListener("click", () => {
+    modal.classList.remove("active");
+});
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.remove("active");
+    }
 });

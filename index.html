@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./css/style.css">
         <script src="https://kit.fontawesome.com/63b0c67427.js" crossorigin="anonymous"></script>
     </head>
+
     <body>
         <header class="header">
             <div class="wrapper">
@@ -15,37 +16,64 @@
                 </div>
 
                 <div class="search-box">
-                    <input type="search" placeholder="Search Our Website..." />
+                    <input type="search" placeholder="Search Our Website...">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
             </div>
-            <!-- <nav class="nav-bar">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Style Demo</a></li>
-                    <li><a href="#">Full Width</a></li>
-                    <li><a href="#">Dropdown</a></li>
-                    <li><a href="#">Gallery</a></li>
-                </ul>
-            </nav> -->
         </header>
 
-        <main>
-            <section class="gallery">
-                <div class="gallery-main">
-                    <img src="https://picsum.photos/id/176/900/600" alt="Main Image" id="main-image">
-                </div>
-            
-                <div class="gallery-list">
-                    <img src="https://picsum.photos/id/176/300/300" alt="" class="thumb active">
-                    <img src="https://picsum.photos/id/184/300/300" alt="" class="thumb">
-                    <img src="https://picsum.photos/id/171/300/300" alt="" class="thumb">
-                    <img src="https://picsum.photos/id/194/300/300" alt="" class="thumb">
-                </div>
-            </section>
+        <main class="slider-container">
+
+            <button class="arrow prev">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="slides">
+                <section class="slide active">
+                    <div class="gallery">
+                        <div class="gallery-main">
+                            <img src="https://picsum.photos/id/176/900/600" id="main-image" alt="Main Image">
+                        </div>
+
+                        <div class="gallery-list">
+
+                            <img src="https://picsum.photos/id/176/300/300" class="thumb active-thumb" alt="">
+                            <img src="https://picsum.photos/id/184/300/300" class="thumb" alt="">
+                            <img src="https://picsum.photos/id/171/300/300" class="thumb" alt="">
+                            <img src="https://picsum.photos/id/194/300/300" class="thumb" alt="">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="slide">
+                    <div class="grid-gallery">
+                        <img src="https://picsum.photos/id/201/500/500" class="grid-img" alt="">
+                        <img src="https://picsum.photos/id/202/500/500" class="grid-img" alt="">
+                        <img src="https://picsum.photos/id/203/500/500" class="grid-img" alt="">
+                        <img src="https://picsum.photos/id/204/500/500" class="grid-img" alt="">
+                        <img src="https://picsum.photos/id/205/500/500" class="grid-img" alt="">
+                        <img src="https://picsum.photos/id/206/500/500" class="grid-img" alt="">
+                        <img src="https://picsum.photos/id/207/500/500" class="grid-img" alt="">
+                        <img src="https://picsum.photos/id/208/500/500" class="grid-img" alt="">
+                        <img src="https://picsum.photos/id/209/500/500" class="grid-img" alt="">
+                    </div>
+                </section>
+            </div>
+
+            <button class="arrow next">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
         </main>
 
-        <script src="./js/main.js"></script>
+        <div class="modal">
+            <button class="close-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
 
+            <img src="" class="modal-image" alt="">
+        </div>
+
+        <script src="./js/main.js"></script>
     </body>
 </html>
